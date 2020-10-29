@@ -1,0 +1,29 @@
+create table memberinfo (
+    memberid varchar(10) primary key not null comment '회원 아이디',
+	memberpwd varchar(200) not null comment '회원 비밀번호',
+	membername varchar(10) not null comment '회원 이름',
+    memberphone varchar(20) not null comment '회원 전화번호',
+	memberlevel int(1) comment '회원 등급'
+);
+
+create table quiz (
+	quizno int (5) primary key not null comment '퀴즈 번호',
+    quizcontent varchar(1000) not null comment '퀴즈 문제',
+	quizanswer varchar(20)  not null comment '퀴즈 답'
+);
+
+CREATE TABLE board (
+	num int(5) primary key not null auto_increment comment '게시물 번호',
+    writer varchar(10) not null comment '작성자',
+    title varchar(100) not null comment '제목',
+    content varchar(5000) not null comment '내용',
+    readcount varchar(4) not null comment '조회수',
+    regdate timestamp not null default current_timestamp comment '날짜',
+    deleteyn int(1) not null comment '삭제 유무',
+    ref int(4) not null comment '답변 그룹',
+    re_step int(4) not null comment '답변 순서',
+    re_level int(4) not null comment '답변 레벨'
+    
+    
+    CONSTRAINT writer FOREIGN KEY(membername)
+);

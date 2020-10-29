@@ -1,0 +1,15 @@
+create table board(
+	num number(4) primary key,
+	writer varchar2(10) not null,
+	email varchar2(20),
+	subject varchar2(50) not null,
+	passwd varchar2(12) not null,
+	reg_date date,
+	readcount number(4) not null,
+	ref number(4) not null,
+	re_step number(4) not null,
+	re_level number(4) not null,
+	content varchar2(4000) not null,
+	ip varchar2(20) not null,
+	remove number(1) not null
+);
